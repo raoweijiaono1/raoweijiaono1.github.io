@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="git测试与协议以及今日分享, Rwj-blog">
+    <meta name="description" content="
+TOC{:toc}
+
+和别人协同合作项目
+首先fork你要的项目点击fork时，就会跳到自己的账号里，然后就把别人的一个库复制到成了自己的库。
+
+git clone （git@github.com:raoweijiapng/helloco">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>git测试与协议以及今日分享 | Rwj-blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Rwj-blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>首页</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>标签</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/categories" class="waves-effect waves-light">
+						
+						<i class="fa fa-bookmark"></i>
+						
+						<span>分类</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>归档</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>关于</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/friends" class="waves-effect waves-light">
+						
+						<i class="fa fa-address-book"></i>
+						
+						<span>友情链接</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Rwj-blog</div>
+        <div class="logo-desc">
+            
+            to be or not to be,this is a question -William Shakespeare
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-user-circle-o"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        git测试与协议以及今日分享
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git-python/" target="_blank">
+                                <span class="chip bg-color">git python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/git/" class="post-category" target="_blank">
+                                git
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-16
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <ul>
+<li>TOC<br>{:toc}</li>
+</ul>
+<h1 id="和别人协同合作项目"><a href="#和别人协同合作项目" class="headerlink" title="和别人协同合作项目"></a>和别人协同合作项目</h1><ol>
+<li><p>首先fork你要的项目<br>点击fork时，就会跳到自己的账号里，然后就把别人的一个库复制到成了自己的库。</p>
+</li>
+<li><p>git clone （<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:raoweijiapng/hellocountry.git）使用ssh类型的地址。</p>
+</li>
+<li><p>将别人的项目地址添加为远程仓库<br> 进入刚刚克隆的目录中：<br>git remote add upstream <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:17824909342/hellocountry.git（别人的项目地址）<br>使用git remote -v<br>可以看到我们有两个仓库一个origin，咱们自己的github仓库；一个upstream，原作者的远程仓库。当然也可以不用upstream这个名字。</p>
+</li>
+<li><p>新建分支，在分支上修改<br>git checkout -b test<br>然后就可以添加我们的修改了。</p>
+</li>
+<li><p>同步别人的项目仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch orgin master:tmp //将远程仓库master分支获取最新，在本地建立tmp分支</span><br><span class="line">git diff tmp //将当前分支和tmp进行对比</span><br><span class="line">git merge origin/master //合并tmp分支到当前分支</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>​     git add和git commit 一下<br>  6. 将修改push到我们的github上<br>    git push origin test:test<br>  7. pull request<br>    修改已经push到了github下了，但是要向原作者请求合并到原项目中，如果原作者合并了，也就意味着你是此项目的贡献者了。<br>  到你的github上点击如下按钮 pull request<br>  当然你也可以选择test分支，，然后点击项目右边的创建一个pull request。提交完pull request，原作者就会看到你的合并请求，采不采纳就是他的事了。</p>
+<h1 id="git的四种协议"><a href="#git的四种协议" class="headerlink" title="git的四种协议"></a>git的四种协议</h1><ul>
+<li><p>本地协议<br>最基本的协议，其远程仓库其实就是硬盘内部的一个目录（例如D:\project）。常见于团队内的人对一个共享的文件系统（例如NFS）具有访问权限，或者多人共用一台电脑的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以使用git clone /d/project来克隆本地的远程仓库。还可以使用带file协议的路径：git clone file:///d/project克隆本地远程仓库。</span><br></pre></td></tr></table></figure>
+
+<p>本地协议的优点：搭建简单。直接使用了现有的文件权限和网络访问权限，如果已经有了共享文件系统，建立版本库会十分容易，只需要像设置其他共享目录一样，将一个Git仓库放在大家都能够访问到的路径并设置好读写权限就可以了。<br>缺点：不方便从多个位置访问，例如你在公司的电脑上搭建了本地仓库，你想在家里访问就有点困难了。不能保证Git仓库的安全，由于每一个人都具有仓库目录完整的shell权限，没有方法可以阻止他们删除或者破坏仓库。</p>
+</li>
+<li><p>HTTP协议<br>（DUMP）HTTP协议（旧，很少使用了）：只支持只读模式。<br>智能（smart）HTTP协议（新，GitHub目前就使用了这种协议）：支持读写模式。既可以像git://协议一样设置匿名服务，又可以像SSH一样提供传输时的授权和加密，而且只用一个URL就可以。<br>得到git://和SSH的功能，省去了为不同的需求设置不同的URL。 HTTP协议推送(push)以及拉取（pull），服务器都会询问你的用户名和密码。<br>HTTP协议的优点：不同的访问方式只需要一个URL，服务器只在需要授权时提示输入授权信息。<br>相对于SSH而言，不需要生成SSH秘钥对再把秘钥上传到服务器上。<br>HTTP/S被广泛采用，一般的企业防火墙都会允许这些端口的数据通过。<br>缺点：在一些服务器上，架设HTTP/S协议会比SSH协议棘手一些；每次需要输入用户名和密码，管理这些凭证会比较麻烦一些（当然你可以使用凭证存储工具，keychain（OSX））。</p>
+</li>
+<li><p>SSH协议<br>　　架设Git服务器时常用SSH协议作为传输协议，因为大多数环境都支持SSH访问，即使不支持也比较容易搭建。<br>$ git clone ssh://user@server/project.git //使用ssh协议clone一个仓库<br>优点：1.架设简单；2.数据传输时是安全的（所有数据传输时都经过授权和加密）；3.高效，和其他3种协议一样，在传输数据时也会尽量压缩数据。<br>缺点：不能通过它实现匿名访问。即使使用者只需要读取数据，使用者也要有通过SSH访问你主机的权限，不利于开源项目。</p>
+</li>
+<li><p>Git协议<br>包含在Git里的一个特殊的守护进程中，监听一个特定的端口9418（类似于SSH服务，但是无需任何访问授权）。<br>优点：目前是Git所使用的协议里面最快的。如果你的项目不需要为写进行用户授权，可以使用Git协议。<br>缺点：1.缺乏授权机制，一旦放开推送操作，意味着网络上的任何人都能向你的项目推送代码；2.架设难。</p>
+</li>
+</ul>
+<h1 id="git测试"><a href="#git测试" class="headerlink" title="git测试"></a>git测试</h1><p>  考试内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">raoweijia@raoweijia-ThinkPad-E580:~$ mkdir xiongdihui</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~$ cd xiongdihui/</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git init</span><br><span class="line">已初始化空的 Git 仓库于 /home/raoweijia/xiongdihui/.git/</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ touch 2019-08-21-git.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ vim 2019-08-21-git.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git add 2019-08-21-git.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git commit -m&quot;diyicitijiao&quot;</span><br><span class="line">[master（根提交） 8622081] diyicitijiao</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 2019-08-21-git.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git remote add xiongdihui git@github.com:raoweijiapng/github.git</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git branch test</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git checkout test</span><br><span class="line">切换到分支 &apos;test&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git mv 2019-08-21-git.md 2019-08-21-git-test.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push -u xiongdihui test</span><br><span class="line">枚举对象: 3, 完成.</span><br><span class="line">对象计数中: 100% (3/3), 完成.</span><br><span class="line">写入对象中: 100% (3/3), 230 bytes | 230.00 KiB/s, 完成.</span><br><span class="line">总共 3 （差异 0），复用 0 （差异 0）</span><br><span class="line">To github.com:raoweijiapng/github.git</span><br><span class="line"> * [new branch]      test -&gt; test</span><br><span class="line">分支 &apos;test&apos; 设置为跟踪来自 &apos;xiongdihui&apos; 的远程分支 &apos;test&apos;。</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git checkout master</span><br><span class="line">A 2019-08-21-git-test.md</span><br><span class="line">D 2019-08-21-git.md</span><br><span class="line">切换到分支 &apos;master&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git fetch xiongdihui test</span><br><span class="line">来自 github.com:raoweijiapng/github</span><br><span class="line"> * branch            test       -&gt; FETCH_HEAD</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git diff xiongdiui/test</span><br><span class="line">fatal: 有歧义的参数 &apos;xiongdiui/test&apos;：未知的版本或路径不存在于工作区中。</span><br><span class="line">使用 &apos;--&apos; 来分隔版本和路径，例如：</span><br><span class="line">&apos;git &lt;命令&gt; [&lt;版本&gt;...] -- [&lt;文件&gt;...]&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git diff xiongdihui/test</span><br><span class="line">diff --git a/2019-08-21-git.md b/2019-08-21-git-test.md</span><br><span class="line">similarity index 100%</span><br><span class="line">rename from 2019-08-21-git.md</span><br><span class="line">rename to 2019-08-21-git-test.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git merge xiongdihui/test</span><br><span class="line">已经是最新的。</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui</span><br><span class="line">fatal: 当前分支 master 没有对应的上游分支。</span><br><span class="line">为推送当前分支并建立与远程上游的跟踪，使用</span><br><span class="line"></span><br><span class="line">    git push --set-upstream xiongdihui master</span><br><span class="line"></span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui master</span><br><span class="line">总共 0 （差异 0），复用 0 （差异 0）</span><br><span class="line">remote: </span><br><span class="line">remote: Create a pull request for &apos;master&apos; on GitHub by visiting:</span><br><span class="line">remote:      https://github.com/raoweijiapng/github/pull/new/master</span><br><span class="line">remote: </span><br><span class="line">To github.com:raoweijiapng/github.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git tag -a v1.0</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui v1.0</span><br><span class="line">枚举对象: 1, 完成.</span><br><span class="line">对象计数中: 100% (1/1), 完成.</span><br><span class="line">写入对象中: 100% (1/1), 157 bytes | 157.00 KiB/s, 完成.</span><br><span class="line">总共 1 （差异 0），复用 0 （差异 0）</span><br><span class="line">To github.com:raoweijiapng/github.git</span><br><span class="line"> * [new tag]         v1.0 -&gt; v1.0</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git remote -v</span><br><span class="line">xiongdihui  git@github.com:raoweijiapng/github.git (fetch)</span><br><span class="line">xiongdihui  git@github.com:raoweijiapng/github.git (push)</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git checkout -b test2</span><br><span class="line">A 2019-08-21-git-test.md</span><br><span class="line">D 2019-08-21-git.md</span><br><span class="line">切换到一个新分支 &apos;test2&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ vim 2019-08-21-git-test.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git tag -a v2.0 -m&quot;dewd&quot;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui master</span><br><span class="line">Everything up-to-date</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui v2.0</span><br><span class="line">枚举对象: 1, 完成.</span><br><span class="line">对象计数中: 100% (1/1), 完成.</span><br><span class="line">写入对象中: 100% (1/1), 157 bytes | 157.00 KiB/s, 完成.</span><br><span class="line">总共 1 （差异 0），复用 0 （差异 0）</span><br><span class="line">To github.com:raoweijiapng/github.git</span><br><span class="line"> * [new tag]         v2.0 -&gt; v2.0</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git checkout master</span><br><span class="line">A 2019-08-21-git-test.md</span><br><span class="line">D 2019-08-21-git.md</span><br><span class="line">切换到分支 &apos;master&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ vim 2019-08-21-git-test.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui test3</span><br><span class="line">error: 源引用表达式 test3 没有匹配</span><br><span class="line">error: 推送一些引用到 &apos;git@github.com:raoweijiapng/github.git&apos; 失败</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push -f -u xiongdihui test3</span><br><span class="line">error: 源引用表达式 test3 没有匹配</span><br><span class="line">error: 推送一些引用到 &apos;git@github.com:raoweijiapng/github.git&apos; 失败</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui master:test3</span><br><span class="line">总共 0 （差异 0），复用 0 （差异 0）</span><br><span class="line">remote: </span><br><span class="line">remote: Create a pull request for &apos;test3&apos; on GitHub by visiting:</span><br><span class="line">remote:      https://github.com/raoweijiapng/github/pull/new/test3</span><br><span class="line">remote: </span><br><span class="line">To github.com:raoweijiapng/github.git</span><br><span class="line"> * [new branch]      master -&gt; test3</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git checkout test3</span><br><span class="line">A 2019-08-21-git-test.md</span><br><span class="line">D 2019-08-21-git.md</span><br><span class="line">分支 &apos;test3&apos; 设置为跟踪来自 &apos;xiongdihui&apos; 的远程分支 &apos;test3&apos;。</span><br><span class="line">切换到一个新分支 &apos;test3&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ vim 2019-08-21-git-test.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git push xiongdihui test3</span><br><span class="line">Everything up-to-date</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git log</span><br><span class="line">commit 86220815cf1000aafaa913e2542dbb3d0332a228 (HEAD -&gt; test3, tag: v2.0, tag: v1.0, xiongdihui/test3, xiongdihui/test, xiongdihui/master, test2, test, master)</span><br><span class="line">Author: raoweijia-png &lt;raoweijia@outlook.com&gt;</span><br><span class="line">Date:   Wed Aug 21 19:35:48 2019 +0800</span><br><span class="line"></span><br><span class="line">    diyicitijiao</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git reset --hard e580356   版本回退</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git checkout test2</span><br><span class="line">A 2019-08-21-git-test.md</span><br><span class="line">D 2019-08-21-git.md</span><br><span class="line">切换到分支 &apos;test2&apos;</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ touch test2.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ vim test2.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git add test2.md </span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git commit -m&quot;abc&quot;</span><br><span class="line">[test2 142c544] abc</span><br><span class="line"> 2 files changed, 1 insertion(+)</span><br><span class="line"> rename 2019-08-21-git.md =&gt; 2019-08-21-git-test.md (100%)</span><br><span class="line"> create mode 100644 test2.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git commit -amend</span><br><span class="line">error: 你的意思是 `--amend`（有两个短线？）</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git commit --amend</span><br><span class="line">[test2 e580356] abcdd</span><br><span class="line"> Date: Wed Aug 21 20:00:56 2019 +0800</span><br><span class="line"> 2 files changed, 1 insertion(+)</span><br><span class="line"> rename 2019-08-21-git.md =&gt; 2019-08-21-git-test.md (100%)</span><br><span class="line"> create mode 100644 test2.md</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git revert （e580356）   撤消指定的提交</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git remote rm xiongdihui</span><br><span class="line">raoweijia@raoweijia-ThinkPad-E580:~/xiongdihui$ git log</span><br></pre></td></tr></table></figure>
+
+<p>  错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git revert （哈希值）   撤消指定的提交。</span><br><span class="line">git reset --hard （哈希值或标签名）  -回退版本  要进行强行提交，使用git push -f -u (主机名) (分支名)</span><br><span class="line">git push （主机名）（标签名）  提交标签到远程库</span><br><span class="line">git remote rm （主机名）  删除远程库地址</span><br><span class="line">git push （主机名）（本地分支）：（远程分支） 把某个本地分支提交到远程分支。</span><br><span class="line">git reset HEAD (file)  不想提交的缓存文件，用上一次提交的树替换缓存区。</span><br><span class="line">git checkout --（file）</span><br><span class="line">git checkout HEAD（file）用master的树替换工作区和缓存区。</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/shimazhuge/article/details/52759429" target="_blank" rel="noopener">相关的命令博客</a></p>
+<p><img src="https://raoweijiapng.github.io/static/img/git.png" alt="git命令速查表"></p>
+<h1 id="Python与人工智能"><a href="#Python与人工智能" class="headerlink" title="Python与人工智能"></a>Python与人工智能</h1><p>  人工智能包含常用机器学习和深度学习两个很重要的模块，而python拥有matplotlib、Numpy、sklearn、keras等大量的库，像pandas、sklearn、matplotlib这些库都是做数据处理、数据分析、数据建模和绘图的库，基本上机器学习中对数据的爬取（scrapy）、对数据的处理和分析（pandas）、对数据的绘图（matplotlib）和对数据的建模（sklearn）在python中全都能找到对应的库来进行处理。</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《git测试与协议以及今日分享》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/16/2019-08-21-github-connect/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                WeiJia Rao
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/10/16/2019-08-22-vim/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="vim基础命令">
+                        
+                        <span class="card-title">vim基础命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+TOC{:toc}
+
+基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 
+vim命令模式   用户刚刚启动 vi/vim，
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/vim/" class="post-category" target="_blank">
+                                    vim
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vim/" target="_blank">
+                        <span class="chip bg-color">vim</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/10/16/2019-08-20-git-opreation/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="git基础命令分享">
+                        
+                        <span class="card-title">git基础命令分享</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+TOC{:toc}
+
+git clone1. 在当前目录下创建一个名libgit2的目录,并在这个目录下初始化一个.git文件夹,从远程仓库拉取下所有数据放入.git文件夹,然后从中读取最新版本的文件的拷贝。 
+$ git clone h
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/git/" class="post-category" target="_blank">
+                                    git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&nbsp;&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>&nbsp;基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
+            <br>
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("06/28/2019 00:00:00");
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
