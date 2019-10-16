@@ -13,7 +13,7 @@ $(function () {
     articleCardHover();
 
     /*菜单切换*/
-    $('.button-collapse').sideNav();
+    $('.sidenav').sidenav();
 
     /* 修复文章卡片 div 的宽度. */
     let fixPostCardWidth = function (srcId, targetId) {
@@ -116,13 +116,7 @@ $(function () {
     };
     articleInit();
 
-    $('#toggleSearch').click(function () {
-        // IOS下获得焦点后会导致视图上移，这里判断如果是 iPhone|iPad|iPod|iOS，就移除焦点属性.
-        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-            $('#searchInput').removeAttr('autofocus');
-        }
-        $('#searchModal').openModal();
-    });
+    $('.modal').modal();
 
     /*回到顶部*/
     $('#backTop').click(function () {
@@ -143,5 +137,25 @@ $(function () {
             $nav.removeClass('nav-transparent');
             $backTop.slideDown(300);
         }
+    });
+    /*支持二级菜单*/
+    $(".nav-menu>li").hover(function(){
+	$(this).children('ul').stop(true,true).show();
+	$(this).addClass('nav-show').siblings('li').removeClass('nav-show');
+		
+	},function(){
+		$(this).children('ul').stop(true,true).hide();
+		$('.nav-item.nav-show').removeClass('nav-show');
+	})
+	
+    $('.m-nav-item>a').on('click',function(){
+            if ($(this).next('ul').css('display') == "none") {
+                $('.m-nav-item').children('ul').slideUp(300);
+                $(this).next('ul').slideDown(100);
+                $(this).parent('li').addClass('m-nav-show').siblings('li').removeClass('m-nav-show');
+            }else{
+                $(this).next('ul').slideUp(100);
+                $('.m-nav-item.m-nav-show').removeClass('m-nav-show');
+            }
     });
 });
