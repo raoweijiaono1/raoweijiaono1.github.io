@@ -426,7 +426,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-17
+                    2019-10-23
                 </div>
 
                 
@@ -443,12 +443,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><p>函数名的定义：1.推荐使用英文，可以使用拼音，不可以使用汉字；2.可以使用数字，但是不能以数字开头；3.不可以使用特殊字符，除了下划线_；4.函数名严格区分大小写；5.函数命名要有意义；6.函数名不能和系统保留关键字冲突；7.函数名尽量不要和系统已存在的内建函数同名，以免覆盖内建函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将输出10行10列的星星作为一个整体</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mystar</span><span class="params">()</span>:</span><span class="comment">#新的代码组  函数</span></span><br><span class="line">  j = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> j &lt; <span class="number">3</span>:</span><br><span class="line">    <span class="comment"># 输出一行星星</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; <span class="number">10</span>:</span><br><span class="line">      print(<span class="string">'*'</span>, end=<span class="string">''</span>)</span><br><span class="line">      i += <span class="number">1</span></span><br><span class="line">     <span class="comment"># 输出一个换行</span></span><br><span class="line">     print()</span><br><span class="line"><span class="comment"># 变量自增</span></span><br><span class="line">j += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在输出1个10行10列的星星</span></span><br><span class="line">mystar()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将输出10行10列的星星作为一个整体</span></span><br><span class="line">def mystar():<span class="comment">#新的代码组  函数</span></span><br><span class="line">  j = 0</span><br><span class="line">  <span class="keyword">while</span> j &lt; 3:</span><br><span class="line">    <span class="comment"># 输出一行星星</span></span><br><span class="line">    i = 0</span><br><span class="line">    <span class="keyword">while</span> i &lt; 10:</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'*'</span>, end=<span class="string">''</span>)</span><br><span class="line">      i += 1</span><br><span class="line">     <span class="comment"># 输出一个换行</span></span><br><span class="line">     <span class="built_in">print</span>()</span><br><span class="line"><span class="comment"># 变量自增</span></span><br><span class="line">j += 1</span><br><span class="line"></span><br><span class="line"><span class="comment">#在输出1个10行10列的星星</span></span><br><span class="line">mystar()</span><br></pre></td></tr></table></figure>
 
 <h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><ul>
 <li>普通参数</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#带有参数的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printnum</span><span class="params">(maxnum)</span>:</span></span><br><span class="line">  var = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> var &lt;= maxnum:</span><br><span class="line">      print(var)</span><br><span class="line">      var += <span class="number">1</span></span><br><span class="line"><span class="comment">#输出0-10的数字</span></span><br><span class="line"><span class="comment">#printnum(10)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#形参：在定义函数的括号中声明的变量名就是形参，形式上的参数</span></span><br><span class="line"><span class="comment">#实参：在调用函数的括号中传入的就是实参，实际上的参数</span></span><br><span class="line"><span class="comment">#注意：实参将值传递给形参的过程，本质上就是变量赋值操作</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#带有参数的函数</span></span><br><span class="line">def printnum(maxnum):</span><br><span class="line">  var = 0</span><br><span class="line">  <span class="keyword">while</span> var &lt;= maxnum:</span><br><span class="line">      <span class="built_in">print</span>(var)</span><br><span class="line">      var += 1</span><br><span class="line"><span class="comment">#输出0-10的数字</span></span><br><span class="line"><span class="comment">#printnum(10)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#形参：在定义函数的括号中声明的变量名就是形参，形式上的参数</span></span><br><span class="line"><span class="comment">#实参：在调用函数的括号中传入的就是实参，实际上的参数</span></span><br><span class="line"><span class="comment">#注意：实参将值传递给形参的过程，本质上就是变量赋值操作</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>默认值参数</li>
@@ -657,7 +657,7 @@
                   property="dct:title" rel="dct:type">
                     《python基础(5)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/17/2019-10-14-python-ji-chu-5/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/23/2019-10-14-python-ji-chu-5/" property="cc:attributionName"
                rel="cc:attributionURL">
                 WeiJia Rao
             </a> 采用
@@ -697,9 +697,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/10/23/2019-10-14-python-ji-chu-5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="python基础(5)">
+                        
+                        <span class="card-title">python基础(5)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            函数的定义函数名的定义：1.推荐使用英文，可以使用拼音，不可以使用汉字；2.可以使用数字，但是不能以数字开头；3.不可以使用特殊字符，除了下划线_；4.函数名严格区分大小写；5.函数命名要有意义；6.函数名不能和系统保留关键字冲突；7.函数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/10/23/2019-10-13-python-ji-chu-4/">
                     <div class="card-image">
@@ -729,64 +780,8 @@ dweffef
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/10/16/2019-10-13-python-ji-chu-3/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python基础(3)">
-                        
-                        <span class="card-title">python基础(3)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-TOC{:toc}
-
-运算和运算符运算：一个或者一个以上的数据经过变化得到一个新值的过程。运算符：运算的符号就是运算符。
-
-算术运算
-
-1234567891011121314151617181920212223242526272829# 
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
                             </span>
                         <span class="publish-author">
                             
